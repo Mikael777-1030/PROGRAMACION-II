@@ -8,25 +8,25 @@ class FiguraGeometrica:
     def area(self, figura):
         raise ValueError("Figura no soportada")
     
-    # Círculo: {'tipo': 'circulo', 'radio': valor}
+    
     @area.register
     def _(self, figura: dict):
         if figura.get("tipo") == "circulo":
             return math.pi * figura["radio"]**2
         
-        # Rectángulo: {'tipo': 'rectangulo', 'base': valor, 'altura': valor}
+        
         if figura.get("tipo") == "rectangulo":
             return figura["base"] * figura["altura"]
 
-        # Triángulo: {'tipo': 'triangulo', 'base': valor, 'altura': valor}
+        
         if figura.get("tipo") == "triangulo":
             return (figura["base"] * figura["altura"]) / 2
 
-        # Trapecio: {'tipo': 'trapecio', 'base_mayor': valor, 'base_menor': valor, 'altura': valor}
+        
         if figura.get("tipo") == "trapecio":
             return ((figura["base_mayor"] + figura["base_menor"]) * figura["altura"]) / 2
 
-        # Pentágono regular: {'tipo': 'pentagono', 'lado': valor}
+        
         if figura.get("tipo") == "pentagono":
             lado = figura["lado"]
             apotema = lado / (2 * math.tan(math.pi / 5))
