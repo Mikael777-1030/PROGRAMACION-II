@@ -5,27 +5,27 @@ class FiguraGeometrica:
     def area(self, *args):
         """ Calcula el área según la cantidad de argumentos. """
         if len(args) == 1:  
-            # Círculo (radio)
+            
             radio = args[0]
             return math.pi * radio**2
         
         elif len(args) == 2:  
-            # Rectángulo (base, altura)
+            
             base, altura = args
             return base * altura
 
         elif len(args) == 3:  
-            # Triángulo (base, altura, ignorado)
+            
             base, altura, _ = args
             return (base * altura) / 2
         
         elif len(args) == 4:  
-            # Trapecio (base mayor, base menor, altura, ignorado)
+            
             base_mayor, base_menor, altura, _ = args
             return ((base_mayor + base_menor) * altura) / 2
         
         elif len(args) == 5:  
-            # Pentágono regular (solo lado)
+            
             lado = args[0]
             apotema = lado / (2 * math.tan(math.pi / 5))
             perimetro = 5 * lado
