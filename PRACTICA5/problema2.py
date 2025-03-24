@@ -1,15 +1,12 @@
 import math
 
 def calcular_promedio(numeros):
-    " Calcula el promedio de una lista de números "
     return sum(numeros) / len(numeros)
 
 def calcular_desviacion(numeros, promedio):
-    " Calcula la desviación estándar de una lista de números "
     return math.sqrt(sum((x - promedio) ** 2 for x in numeros) / (len(numeros) - 1))
 
 def estadisticas():
-    " Solicita 10 números y muestra el promedio y la desviación estándar "
     try:
         numeros = list(map(float, input("Ingrese 10 números: ").split()))
         if len(numeros) != 10:
