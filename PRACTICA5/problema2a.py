@@ -7,11 +7,9 @@ class Estadistica:
         self.numeros = numeros
 
     def promedio(self):
-        " Calcula el promedio de los números "
         return sum(self.numeros) / len(self.numeros)
 
     def desviacion(self):
-        " Calcula la desviación estándar de los números "
         promedio = self.promedio()
         return math.sqrt(sum((x - promedio) ** 2 for x in self.numeros) / (len(self.numeros) - 1))
 
